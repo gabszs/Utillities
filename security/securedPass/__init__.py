@@ -15,6 +15,6 @@ def password(password_lenght, ponctuation = False):
         letters = ascii_letters + digits + punctuation
     else:  # else letters going to have only letters and digits
         letters = ascii_letters + digits
-    password_choice = ''.join(choice(letters) for _ in range(password_lenght))
+    password_choice = ''.join(choice(letters) for _ in range(password_lenght)) # concatenate the letters to creat a password
     return password_choice
 
