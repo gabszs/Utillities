@@ -62,13 +62,13 @@ def read_name_age(file_name, description=False):
         if description:
             print(f"REGISTERED PEOPLE\n{16*'-'}>")
         with open(file_name, "rt") as file:
-            for line in enumerate(file):
-                name, age = line.split(';')
-                print(f"name: {name}, age{age}")
+            for line in file:
+                name, age = str(line).split(';')
+                print(f"name: {name}, age: {age}")
 
     except:
         print("Deu erro")
 
-read_name_age('gab')
+read_name_age('gab', description=True)
 
 
