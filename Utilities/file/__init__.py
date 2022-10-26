@@ -29,7 +29,7 @@ def new_file(file_name: str, binary=False):
             with open(file_name, f'xb+') as _:
                 return True
         else:
-            with open(file_name, f'xt+') as _: # creates new TXT file
+            with open(file_name, f'xt+') as _:  # creates new TXT file
                 return True
 
     except (FileExistsError, FileNotFoundError, TypeError, ValueError):  # returns False if some exception raises
@@ -57,7 +57,14 @@ def name_age_txt(file_name, name='unknown', age='unknown', input_parameters=Fals
     except (TypeError, ValueError, FileExistsError, FileNotFoundError):
         raise Exception('The program could not add the information in the file')
 
+
 def read_name_age(file_name, description=False):
+    """
+    especial function that reads the line to find name and age
+    :param file_name:  str
+    :param description: Bool
+    :return: line content
+    """
     try:
         if description:
             print(f"REGISTERED PEOPLE\n{16*'-'}>")
@@ -66,9 +73,8 @@ def read_name_age(file_name, description=False):
                 name, age = str(line).split(';')
                 print(f"name: {name}, age: {age}")
 
-    except:
-        print("Deu erro")
+    except (TypeError, ValueError, FileExistsError, FileNotFoundError):
+        print("Error")
+
 
 read_name_age('gab', description=True)
-
-
